@@ -1,0 +1,32 @@
+﻿@model AddViewModel
+
+<div class="container">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="">
+                <a asp-controller="email" asp-action="List" class="btn btn-secondary">Email List</a>
+            </div>
+        </div>
+
+
+        <form method="POST" asp-controller="Email" asp-action="add" runat="server">
+
+            Individual : @Html.RadioButtonFor(model => model.IsBulk,"true")
+            Bulk : @Html.RadioButtonFor(model => model.IsBulk,"false")
+
+            <div class="form-group">
+                <label asp-for="TargetEmail.TargetEmail"></label>
+                <input asp-for="TargetEmail.TargetEmail" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <input asp-for="Message" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary mt-5 ">Submit</button>
+        </form>
+    </div>
+</div>

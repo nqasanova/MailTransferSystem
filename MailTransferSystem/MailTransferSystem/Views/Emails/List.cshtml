@@ -1,0 +1,30 @@
+﻿@model List<ListItemViewModel>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Title</th>
+                <th scope="col">Message</th>
+                <th scope="col">
+                    <a asp-controller="email" asp-action="add" class="btn btn-primary">Send Email</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var email in Model)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@email.From</td>
+                    <td>@email.To</td>
+                    <td>@email.Title</td>
+                    <td>@email.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
